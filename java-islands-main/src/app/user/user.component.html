@@ -1,0 +1,13 @@
+<div class="main-container user-container">
+  <div class="user-item">
+  <h2>Welcome {{this.username}}!</h2>
+
+    <img src="../../assets/images/island.png"/>
+  </div>
+  <div class="user-item info">
+
+    <p>You are currently on Island no. {{ (this.currentLevel !== undefined ? this.currentLevel + 1 : '') }}!</p>
+<!--    <p>Next up: Island no. {{this.currentTask + 1}}!</p>-->
+    <a routerLink="/explanations"> <button>Continue learning</button></a>
+  </div>
+</div>

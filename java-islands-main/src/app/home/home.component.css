@@ -1,0 +1,91 @@
+/*host {*/
+/*  background-color: #003360;*/
+/*}*/
+
+/** {*/
+/*  margin: 0 80px 0 80px;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: 'Nunito', sans-serif;*/
+/*  background-color: #003360;*/
+/*}*/
+
+img {
+  max-height: 600px;
+}
+
+/*.home-grid {*/
+/*  margin: 20px 0 0 0;*/
+/*  display: grid;*/
+/*  grid-template-columns: 1fr 1fr;*/
+
+/*}*/
+
+h1 {
+  font-family: "belarius-poster-wide", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 400%;
+  color: #E9E038;
+}
+
+p {
+  font-size: 120%;
+  color: #DBE0E6;
+}
+
+button {
+  background-color: #E9E038;
+  color: #003360;
+  font-size: 120%;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 240px;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.home-container {
+  width: 1200px;
+  margin: 48px auto 0 auto;
+  display: flex;
+  align-items: center; /* Vertically center the content */
+}
+
+
+.left {
+  flex: 1; /* Take up equal space */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.right {
+  flex: 1; /* Take up equal space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+h4 {
+    font-size: 150%;
+    color: #E9E038;
+    margin: 0;
+}
+
+.java-islands {
+  font-family: "belarius-poster-wide", sans-serif;
+  font-weight: 300;
+  color: #E9E038;
+}
+
+
+
+
+
+
+

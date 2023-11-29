@@ -1,0 +1,22 @@
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/fao2xpg.css">
+</head>
+
+<nav>
+  <div class="nav-left">
+  <a routerLink="/"><img src="../assets/images/island.png" width="60px" height="66px"/></a>
+  <a routerLink="/" id="java-islands">Java Islands</a>
+  </div>
+  <div class="nav-right">
+    <a routerLink="/user" *ngIf="isLoggedIn()">Profile</a>
+    <a (click)="sendLogout()" *ngIf="isLoggedIn()" style="cursor: pointer">Logout</a>
+
+  <a routerLink="/login" *ngIf="!isLoggedIn()">Login</a>
+  <a routerLink="/register" *ngIf="!isLoggedIn()">Sign Up</a>
+  </div>
+</nav>
+
+<!-- Here different components will be injected depending on defined routes -->
+<router-outlet>
+</router-outlet>
+

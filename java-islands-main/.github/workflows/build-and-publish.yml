@@ -1,0 +1,35 @@
+name: Deploy Angular App as static page on dokku
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Create app on dokku (if it does not exist)
+        uses: dokku/github-action@master
+        with:
+          branch: main
+          command: review-apps:create
+          review_app_name: java-islands  # name shown in url
+          git_remote_url: 'ssh://dokku@168.119.171.224/java-islands' # remote repo
+          ssh_private_key: ${{ secrets.SSH_KEY_PRIVATE }}
+      - name: Push to dokku
+        uses: dokku/github-action@master
+        with:
+          branch: main
+          git_remote_url: 'ssh://dokku@168.119.171.224/java-islands'
+          git_push_flags: '--force'
+          ssh_private_key: ${{ secrets.SSH_KEY_PRIVATE }}

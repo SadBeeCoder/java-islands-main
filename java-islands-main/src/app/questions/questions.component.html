@@ -1,0 +1,43 @@
+<div class="question-container main-container" *ngIf="currentQuestion && currentQuestionShuffled">
+  <div class="question-header">
+    <img src="../../assets/images/island.png" width="60px" height="66px"/>
+    <h1>Question {{questionNumber + 1}}</h1>
+  </div>
+  <div class="question-text">{{ currentQuestion.question }}</div>
+  <div class="answer-container">
+    <div class="answer-row">
+      <div class="answer1 answer" [ngClass]="{ 'selected': selectedAnswer !== undefined && selectedAnswer === currentQuestion.answers[0] }" (click)="selectAnswer(0)"
+           [innerHTML]="currentQuestion.answers[0].answer"></div>
+      <div class="answer2 answer" [ngClass]="{ 'selected': selectedAnswer !== undefined && selectedAnswer === currentQuestion.answers[1] }" (click)="selectAnswer(1)"
+           [innerHTML]="currentQuestion.answers[1].answer"></div>
+    </div>
+    <div class="answer-row">
+      <div class="answer3 answer" [ngClass]="{ 'selected': selectedAnswer !== undefined && selectedAnswer === currentQuestion.answers[2]}" (click)="selectAnswer(2)"
+           [innerHTML]="currentQuestion.answers[2].answer"></div>
+      <div class="answer4 answer" [ngClass]="{ 'selected': selectedAnswer !== undefined && selectedAnswer === currentQuestion.answers[3]}" (click)="selectAnswer(3)"
+           [innerHTML]="currentQuestion.answers[3].answer"></div>
+    </div>
+  </div>
+  <button class="submit-button" (click)="validateAnswer()">Submit</button>
+  <div class="question-feedback" *ngIf="feedback">
+    {{ feedback }}
+  </div>
+  <div>
+    <button (click)="nextQuestion()" id="next-question" *ngIf="isAnswerCorrect">
+      {{ questionNumber === 4 ? 'Continue to Island ' + islandNumber : 'Next question' }}</button>
+
+  </div>
+  <div *ngIf="questionNumber === 4 && isAnswerCorrect" class="question-feedback">
+  Congratulations! You have finished Island {{currentUserLevel + 1}}!
+</div>
+  <div (click)="askAI()" class="ai-answer">Click here for an AI explanation!</div>
+  <div *ngIf="aiAnswer && showAiAnswer" class="ai-container">
+    <p [innerHTML]="aiAnswer" style="color: white"></p>
+  </div>
+</div>
+
+
+
+
+
+

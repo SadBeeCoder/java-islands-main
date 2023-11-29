@@ -1,0 +1,13 @@
+<div class="explanations-container main-container">
+  <div class="task-header">
+
+    <img src="../../assets/images/island.png" width="60px" height="66px"/>
+    <h1>Island {{this.taskId}}</h1>
+  </div>
+  <div class="explanation-text" *ngIf="response">
+    <p [innerHTML]="sanitizedExplanation"></p>
+  </div>
+  <div>
+    <a routerLink="/questions"><button>Go to questions</button></a>
+  </div>
+</div>
